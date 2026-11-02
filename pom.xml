@@ -43,12 +43,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Security -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-
+  
         <!-- Validation -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -61,6 +56,14 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        
+        
+        <!-- cloud image-->
+        <dependency>
+		    <groupId>com.cloudinary</groupId>
+		    <artifactId>cloudinary-http5</artifactId>
+		    <version>2.0.0</version>
+		</dependency>
 
         <!-- DevTools -->
         <dependency>
@@ -76,11 +79,6 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security-test</artifactId>
-            <scope>test</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
