@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
@@ -27,8 +29,17 @@ public class Users {
 	@NotBlank(message = "Password is required")
 	private String password;
 	
-	@NotBlank
-	private String role;
+	@ManyToOne
+	@JoinColumn(name = "role_id")
+	private Role role;
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
 
 	public long getId() {
 		return id;
@@ -62,14 +73,7 @@ public class Users {
 		this.password = password;
 	}
 
-	public String getRole() {
-		return role;
-	}
 
-	public void setRole(String role) {
-		this.role = role;
-	}
-	
 
 
 

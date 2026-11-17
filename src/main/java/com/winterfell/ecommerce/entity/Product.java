@@ -16,6 +16,9 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotBlank
+	private String publicId;
+
 	@NotBlank(message = "not be empty")
 	private String name;
 	
@@ -30,6 +33,14 @@ public class Product {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getPublicId() {
+		return publicId;
+	}
+
+	public void setPublicId(String publicId) {
+		this.publicId = publicId;
 	}
 
 	public String getName() {
