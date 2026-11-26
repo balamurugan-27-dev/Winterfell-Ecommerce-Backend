@@ -4,7 +4,7 @@ public class LoginDto {
 	
 	private String mail;
 	
-	private String Password;
+	private String password;
 
 	public String getMail() {
 		return mail;
@@ -15,11 +15,11 @@ public class LoginDto {
 	}
 
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 	
 	

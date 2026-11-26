@@ -30,27 +30,27 @@ public class ProductController {
 		this.productService=productService;
 	}
 	
-	@GetMapping("/getProducts")
+	@GetMapping("/getproducts")
 	public Page<Product> getProducts(@RequestParam("page")int page){	
 		
 		return productService.getProducts(page);
 	}
 	
-	@GetMapping("/getProduct/{id}")
+	@GetMapping("/getproduct/{id}")
 	public Product getProduct(@PathVariable Long id) {
 		return productService.getProduct(id);
 	}
 
     @PostMapping(
-        value = "/saveProduct",
+        value = "/saveproduct",
         consumes = MediaType.MULTIPART_FORM_DATA_VALUE
     )
 	public Product saveproduct(@RequestPart("product") Product product,@RequestPart("image") MultipartFile image ) throws Exception {
 		return productService.saveProduct(product,image);
 	}
     
-    @DeleteMapping("/deleteProduct")
-    public void deleteProduct(Long id) throws Exception {
+    @DeleteMapping("/deleteproduct")
+    public void deleteProduct(@RequestParam("id") Long id) throws Exception {
     	 productService.deleteProduct(id);
     }
 }
