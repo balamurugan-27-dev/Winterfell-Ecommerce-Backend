@@ -5,20 +5,23 @@ FROM maven:3.9-eclipse-temurin-21 AS build
 # STEP 2: Set working directory
 WORKDIR /app
 
-# STEP 3: Copy project files
+# STEP 3: Copy Maven settings (Google mirror)
+COPY settings.xml /root/.m2/settings.xml
+
+# STEP 4: Copy project files
 COPY pom.xml .
 COPY src ./src
 
-# STEP 4: Build Spring Boot application
-RUN mvn clean package -DskipTests
+# STEP 5: Build Spring Boot application
+RUN mvn -B -ntp clean package -DskipTests
 
-# STEP 5: Get lightweight Java 21 runtime
+# STEP 6: Get lightweight Java 21 runtime
 FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-# STEP 6: Copy generated JAR
+# STEP 7: Copy generated JAR
 COPY --from=build /app/target/*.jar app.jar
 
-# STEP 7: Run application
+# STEP 8: Run application
 ENTRYPOINT ["java", "-jar", "app.jar"]
