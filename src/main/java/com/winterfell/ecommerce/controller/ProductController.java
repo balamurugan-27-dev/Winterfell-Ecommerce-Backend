@@ -21,7 +21,7 @@ import com.winterfell.ecommerce.service.ProductService;
 @RequestMapping("/api")
 @CrossOrigin(origins = {
 	    "http://localhost:5173",
-	    "https://winterfell-ecommerce-zaya.vercel.app"
+	    "https://winterfell-ecommerce.vercel.app"
 	})
 public class ProductController {								
 	

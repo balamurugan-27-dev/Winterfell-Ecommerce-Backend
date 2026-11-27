@@ -20,7 +20,7 @@ import com.winterfell.ecommerce.service.CartService;
 
 @RestController
 @RequestMapping("/api/cart")
-@CrossOrigin("https://winterfell-ecommerce-zaya.vercel.app")
+@CrossOrigin("https://winterfell-ecommerce.vercel.app")
 public class CartController {
 
 	CartService cartService;
