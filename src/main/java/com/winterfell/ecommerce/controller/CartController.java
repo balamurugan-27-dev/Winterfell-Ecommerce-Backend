@@ -20,7 +20,7 @@ import com.winterfell.ecommerce.service.CartService;
 
 @RestController
 @RequestMapping("/api/cart")
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin("https://winterfell-ecommerce-zaya-git-main-balamurugan2.vercel.app")
 public class CartController {
 
 	CartService cartService;
@@ -64,7 +64,7 @@ public class CartController {
 	}
 	
 	@PutMapping("updatequantity")
-	public void updateQuantity(@RequestParam Long id,@RequestParam int quantity ,Authentication authentication) {
+	public void updateQuantity(@RequestParam Long id,@RequestParam int quantity ,Authentication authentication)	 {
 		
 		cartService.updateQuantity(id,quantity,authentication);
 	}
