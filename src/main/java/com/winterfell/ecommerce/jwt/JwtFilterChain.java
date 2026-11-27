@@ -40,7 +40,6 @@ protected void doFilterInternal(
         FilterChain filterChain)
         throws ServletException, IOException {
 
-    System.out.println("JWT FILTER EXECUTED");
 
     String header = request.getHeader("Authorization");
 
@@ -80,7 +79,7 @@ protected void doFilterInternal(
 
         } catch (Exception e) {
 
-            System.out.println("JWT ERROR: " + e.getMessage());
+         
 
             SecurityContextHolder.clearContext();
 
@@ -90,7 +89,6 @@ protected void doFilterInternal(
     }
 
     // Execute the remaining filter chain only once
-    System.out.println("JWT FILTER PASSED");
 
     filterChain.doFilter(request, response);
 }
