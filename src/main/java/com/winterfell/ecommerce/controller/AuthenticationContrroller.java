@@ -16,7 +16,7 @@ import com.winterfell.ecommerce.service.CustomerDetails;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin("https://winterfell-ecommerce-zaya-git-main-balamurugan2.vercel.app")	
+@CrossOrigin("https://winterfell-ecommerce-zaya.vercel.app")	
 public class AuthenticationContrroller {
 
 	AuthenticationService authService;
